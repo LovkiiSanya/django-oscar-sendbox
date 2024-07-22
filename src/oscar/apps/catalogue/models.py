@@ -36,7 +36,7 @@ if not is_model_registered("catalogue", "ProductCategory"):
 if not is_model_registered("catalogue", "Product"):
 
     class Product(AbstractProduct):
-        pass
+        test_field = models.CharField(max_length=255, blank=True, null=True)
 
     __all__.append("Product")
 

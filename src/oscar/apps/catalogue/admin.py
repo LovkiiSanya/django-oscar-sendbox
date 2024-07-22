@@ -50,13 +50,14 @@ class ProductAdmin(admin.ModelAdmin):
         "get_product_class",
         "structure",
         "attribute_summary",
+        "test_field",
         "date_created",
     )
     list_filter = ["structure", "is_discountable"]
     raw_id_fields = ["parent"]
     inlines = [AttributeInline, CategoryInline, ProductRecommendationInline]
     prepopulated_fields = {"slug": ("title",)}
-    search_fields = ["upc", "title"]
+    search_fields = ["upc", "title", "test_field"]
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
